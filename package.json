@@ -1,0 +1,11 @@
+{
+    "name" : "grabson",
+    "dependecies" : {
+
+    },
+    "devDependencies" {
+        "grunt" : "*",
+        "grunt-contrib-jshint" : "*",
+        "grunt-contrib-watch" : "*"
+    }
+}
