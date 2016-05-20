@@ -4,6 +4,8 @@
 
     },
     "devDependencies" {
+    	"mocha" : "*",
+    	"should" : "*",
         "grunt" : "*",
         "grunt-contrib-jshint" : "*",
         "grunt-contrib-watch" : "*"
