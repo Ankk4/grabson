@@ -1,10 +1,11 @@
+'use strict';
 module.exports = function(grunt){
     grunt.initConfig({
         jshint : {
-            files : ['lib/**/*js','models/**/*.js']
+            files : ['/lib/**/*js','models/**/*.js']
         },
         watch : {
-            files : ['lib/**/*js','models/**/*.js'],
+            files : ['/lib/**/*js','models/**/*.js'],
             tasks : ['jshint']
         }
     });
