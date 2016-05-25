@@ -1,13 +1,14 @@
 {
-    "name" : "grabson",
-    "dependecies" : {
-
-    },
-    "devDependencies" {
-    	"mocha" : "*",
-    	"should" : "*",
-        "grunt" : "*",
-        "grunt-contrib-jshint" : "*",
-        "grunt-contrib-watch" : "*"
-    }
+  "name": "grabson",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-htmlhint": "^0.9.13",
+    "mocha": "^2.5.3",
+    "should": "*"
+  },
+  "dependencies": {}
 }

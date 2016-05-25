@@ -8,6 +8,6 @@ var Log = function(args) {
 	log.createdAt 	= args.createdAt || new Date();
 
 	return log;
-}
+};
 
 module.exports = Log;
