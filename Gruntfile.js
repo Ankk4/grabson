@@ -2,7 +2,15 @@
 module.exports = function(grunt){
     grunt.initConfig({
         jshint: {
+            options: {
+                reporter: require('jshint-stylish')
+            },
             files: ['listen/lib/**/*.js','listen/models/**/*.js']
+        },
+        nodemon: {
+          dev: {
+            script: 'listen/lib/server.js'
+          }
         },
         htmlhint: {
             templates: {
@@ -20,17 +28,30 @@ module.exports = function(grunt){
             files: ['listen/lib/**/*.js','listen/models/**/*.js',
                     'public/*.html', 'public/**/*.html'
             ],
-            tasks: ['jshint', 
-                    'htmlhint'
-            ]
+            tasks: ['jshint', 'htmlhint']
+        },
+        concurrent: {
+            dev: [
+                'jshint',
+                'htmlhint',
+                'nodemon',
+                'watch'
+            ],
+            options: {
+                logConcurrentOutput: true,
+                limit: 4
+            }
         }
     });
 
-    grunt.loadNpmTasks("grunt-contrib-jshint");
+    grunt.loadNpmTasks('grunt-concurrent');
+    grunt.loadNpmTasks("grunt-contrib-jshint");    
+    grunt.loadNpmTasks("grunt-nodemon");
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-htmlhint");
     //Uglifyjs 
 
-    grunt.registerTask("default", ['jshint', 'htmlhint']);
-
+    grunt.registerTask('default', [
+        'concurrent'
+    ]);
 }

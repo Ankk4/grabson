@@ -3,12 +3,18 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-cli": "*",
+    "grunt-concurrent": "^2.3.0",
     "grunt-contrib-clean": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-htmlhint": "^0.9.13",
+    "grunt-nodemon": "^0.4.2",
+    "jshint-stylish": "^2.2.0",
     "mocha": "^2.5.3",
-    "should": "*"
+    "should": "*",
+    "supertest": "^1.2.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }
