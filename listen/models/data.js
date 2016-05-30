@@ -8,7 +8,9 @@ var Data = function(args){
 	data.game      = args.game;
 	data.createdAt = args.createdAt || new Date();
 	data.idToken   = args.idToken || rndString.randomString(18);
-	return data;
+	data.results   = args.reults || {'some': 'result'};
+
+	return data; 
 };
 
 module.exports = Data;
