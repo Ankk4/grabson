@@ -10,4 +10,4 @@ var userModel = new Schema({
 	apiKey:         { type: String, unique: true }
 });
 
-module.exports = mongoose.model('User', userModel);
+module.exports = mongoose.model('User', userModel)
