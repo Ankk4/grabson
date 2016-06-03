@@ -1,11 +1,12 @@
 var mongoose = require('mongoose');
-var Schema   = mongoose.Schema();
+var Schema   = mongoose.Schema;
 
-// Schema - Data
-var dataSchema = {
+// Schema - game
+var gameModel = new Schema({
 	game: 		{ type: String },
-	createdAt: 	{ type: Date },
-	data: 		{ type: Object }
-};
+	createdAt: 	{ type: Date, default: Date.now },
+	data: 		{ type: Object },
+	apiKey: 	{ type: String }
+});
 
-module.exports = mongoose.model('game', dataSchema);
+module.exports = mongoose.model('Game', gameModel);
