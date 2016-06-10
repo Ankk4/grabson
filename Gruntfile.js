@@ -5,11 +5,11 @@ module.exports = function(grunt){
             options: {
                 reporter: require('jshint-stylish')
             },
-            files: ['listen/lib/**/*.js','listen/models/**/*.js']
+            files: ['lib/**/*.js','models/**/*.js']
         },
         nodemon: {
           dev: {
-            script: 'listen/lib/server.js'
+            script: 'lib/server.js'
           }
         },
         htmlhint: {
@@ -25,7 +25,7 @@ module.exports = function(grunt){
 
         },
         watch: {
-            files: ['listen/lib/**/*.js','listen/models/**/*.js',
+            files: ['lib/**/*.js','models/**/*.js',
                     'public/*.html', 'public/**/*.html'
             ],
             tasks: ['jshint', 'htmlhint']
