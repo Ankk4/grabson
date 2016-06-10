@@ -2,6 +2,7 @@
   "name": "grabson",
   "devDependencies": {
     "grunt": "^1.0.1",
+    "grunt-clear": "^0.2.1",
     "grunt-cli": "*",
     "grunt-concurrent": "^2.3.0",
     "grunt-contrib-clean": "*",
@@ -15,6 +16,11 @@
     "supertest": "^1.2.0"
   },
   "dependencies": {
-    "express": "^4.13.4"
+    "angular": "^1.5.6",
+    "body-parser": "*",
+    "bootstrap": "^3.3.6",
+    "express": "^4.13.4",
+    "jquery": "^3.0.0",
+    "mongoose": "^4.4.19"
   }
 }
