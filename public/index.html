@@ -11,23 +11,99 @@
 </head>
 <body ng-controller="RestCtrl">
 
-	<!-- Header -->
-	<div class="page-header">
-		<div>
-			<h2>RestAPI v1.0</h2>
-			<p>I want your stuff.</p>
-		</div>
-	</div>
-
 	<!-- Main Content -->
-	<div class="container-fluid page-wrapper">
-		<div>
-		</div>
+	<div class="container-fluid page-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+    <!-- Header -->
+    <div class="page-header">
+      <div>
+        <h2>RestAPI v1.0</h2>
+        <p class="text-muted">I want your stuff.</p>
+      </div>
+    </div>
+    
+    <!-- First row -->
+    <div class="row">    
+      <!-- Content - left -->
+      <div class="text-justify col-lg-5 col-md-5 col-md-12 col-xs-12">
+        <h3>What is this?</h3> 
+        <p>REST is a coding architechtural model and comes from the words "Representational State Transfer". It is completely stateless, meaning server side does not store any state about the client session. The state is instead kept and transfered from the client to everywhere. This is the architechture style of the world wide web!</p>
+          
+        <br>
+        <p>At the base of REST is the following verbs:</p>
+        <div class="text-justify">
+          <table class="table">
+            <thead>
+              <tr> <th>Verbs</th> <th>Objective</th> <th>Implemented</th></tr>
+            </thead>
+            <tbody>
+              <tr> <td>GET</td>     <td>Retrive items from resource</td>        <td>Yes</td>  </tr>
+              <tr> <td>POST</td>    <td>Create new item in resource</td>        <td>Yes</td>  </tr>
+              <tr> <td>PUT</td>     <td>Replace existing item in resource</td>  <td>No</td>   </tr>
+              <tr> <td>PATCH</td>   <td>Update existing item in resource</td>   <td>No</td>   </tr>
+              <tr> <td>DELETE</td>  <td>Delete existing item in resource</td>   <td>No</td>   </tr>            
+            </tbody>
+          </table>
+        </div>
+      </div>    
+
+      <!-- Content - Right -->
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1">
+        <div>
+          <form class="form-horizontal" role="form" id="newTeam">
+            <legend>Create new team</legend> 
+            <!-- First label -->
+            <div class="form-group">
+              <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="username">Username:</label>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <input type="text" class="form-control" id="username" placeholder="Must be unique">
+              </div>
+            </div>
+            <!-- Second label -->
+            <div class="form-group">
+              <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="teamname">Team name:</label>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <input type="text" class="form-control" id="teamname" placeholder="Name of your team (can be empty)">
+              </div>
+            </div>
+            <!-- Third label -->
+            <div class="form-group">
+              <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="Description">Description:</label>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">          
+                <textarea class="form-control" id="description" placeholder="Description of your REST needs!"></textarea>
+                <p class="text-justify">Example: <em>"Group of 10 people, shared apikey. We have few games that we want to save data from and easily access later."</em></p>
+              </div>
+            </div>
+            <!-- Forth label -->
+            <div class="form-group">
+              <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="created">Created At:</label>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">          
+                <p class="date">Time</p>
+              </div>
+            </div>
+            <!-- Submit -->
+            <div class="form-group">        
+              <div class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                <input type="submit" class="btn btn-default" value="Create new resource">
+              </div>
+            </div>
+            <div>
+              <p>Your Generated apikey will appear here!</p>
+            </div>
+          </form>        
+        </div>
+
+        <div>
+          <p>All created teams</p>
+        </div>
+
+      </div>
+    </div>
 	</div>	
 
 </body>
-	<script src="node_modules/jquery/dist/jquery-min.js">			</script>
-	<script src="node_modules/angular/angular-min.js">				</script>
-	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js">	</script>
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>  
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="node_modules/angular/angular.min.js"></script>
 	<script src="public/js/app.js"></script>
 </html>

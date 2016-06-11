@@ -2,7 +2,7 @@
 var app = angular.module('RestAPI', []);
 
 // CONTROLLERS
-app.controller('RestAPI', function($scope){
+app.controller('RestCtrl', function($scope){
     $scope.validate_createForm = function() {
         //Already validated.. Password check here?
         // $scope.createForm.password.$modelValue;
