@@ -29,8 +29,7 @@
         <h3>What is this?</h3> 
         <p>REST is a coding architechtural model and comes from the words "Representational State Transfer". It is completely stateless, meaning server side does not store any state about the client session. The state is instead kept and transfered from the client to everywhere. This is the architechture style of the world wide web!</p>
           
-        <br>
-        <p>At the base of REST is the following verbs:</p>
+        <h4>REST Verbs</h4>
         <div class="text-justify">
           <table class="table">
             <thead>
@@ -42,6 +41,19 @@
               <tr> <td>PUT</td>     <td>Replace existing item in resource</td>  <td>No</td>   </tr>
               <tr> <td>PATCH</td>   <td>Update existing item in resource</td>   <td>No</td>   </tr>
               <tr> <td>DELETE</td>  <td>Delete existing item in resource</td>   <td>No</td>   </tr>            
+            </tbody>
+          </table>
+          <h4>Route information</h4>
+          <table class="table">
+            <thead>
+              <tr> <th>Routes</th> <th>Functionality</th> <th>Implemented</th></tr>
+            </thead>
+            <tbody>
+              <tr> <td>/</td>                 <td>GET this page</td>                                <td>Yes</td>  </tr>
+              <tr> <td>/users</td>            <td>GET all the users, POST new user</td>             <td>Yes</td>  </tr>
+              <tr> <td>/games</td>            <td>GET all data about all games</td>                 <td>Yes</td>  </tr>
+              <tr> <td>/games/single/:id</td> <td>GET single game data insert by id</td>            <td>Yes</td>  </tr>
+              <tr> <td>/games/:apiKey</td>    <td>GET all games by apiKey, POST new game data</td>  <td>Yes</td>   </tr>            
             </tbody>
           </table>
         </div>
@@ -88,14 +100,12 @@
               </div>
             </div>
             <div>
-              <p>Your Generated apikey will appear here!</p>
+              <p>Your Generated apikey will appear below!</p>
+              <p class="apikey">Not yet implemented, use post request manually</p>
             </div>
           </form>        
         </div>
 
-        <div>
-          <p>All created teams</p>
-        </div>
 
       </div>
     </div>
