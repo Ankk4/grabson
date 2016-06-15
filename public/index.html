@@ -26,11 +26,15 @@
     <div class="row">    
       <!-- Content - left -->
       <div class="text-justify col-lg-5 col-md-5 col-md-12 col-xs-12">
+
         <h3>What is this?</h3> 
         <p>REST is a coding architechtural model and comes from the words "Representational State Transfer". It is completely stateless, meaning server side does not store any state about the client session. The state is instead kept and transfered from the client to everywhere. This is the architechture style of the world wide web!</p>
+        <p> This API currently implements HTTP REST services to collect and serve data about different games. This can be used for all sort of analytics about game time, player behavior, marketing and so on. </p>
           
         <h4>REST Verbs</h4>
+
         <div class="text-justify">
+        
           <table class="table">
             <thead>
               <tr> <th>Verbs</th> <th>Objective</th> <th>Implemented</th></tr>
@@ -43,6 +47,7 @@
               <tr> <td>DELETE</td>  <td>Delete existing item in resource</td>   <td>No</td>   </tr>            
             </tbody>
           </table>
+
           <h4>Route information</h4>
           <table class="table">
             <thead>
@@ -53,17 +58,19 @@
               <tr> <td>/users</td>            <td>GET all the users, POST new user</td>             <td>Yes</td>  </tr>
               <tr> <td>/games</td>            <td>GET all data about all games</td>                 <td>Yes</td>  </tr>
               <tr> <td>/games/single/:id</td> <td>GET single game data insert by id</td>            <td>Yes</td>  </tr>
-              <tr> <td>/games/:apiKey</td>    <td>GET all games by apiKey, POST new game data</td>  <td>Yes</td>   </tr>            
+              <tr> <td>/games/:apiKey</td>    <td>GET all games by apiKey, POST new game data</td>  <td>Yes</td>  </tr>
             </tbody>
           </table>
-        </div>
-      </div>    
+
+        </div>   
+      </div>
 
       <!-- Content - Right -->
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1">
         <div>
           <form class="form-horizontal" role="form" id="newTeam">
             <legend>Create new team</legend> 
+
             <!-- First label -->
             <div class="form-group">
               <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="username">Username:</label>
@@ -71,6 +78,7 @@
                 <input type="text" class="form-control" id="username" placeholder="Must be unique">
               </div>
             </div>
+
             <!-- Second label -->
             <div class="form-group">
               <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="teamname">Team name:</label>
@@ -78,6 +86,7 @@
                 <input type="text" class="form-control" id="teamname" placeholder="Name of your team (can be empty)">
               </div>
             </div>
+
             <!-- Third label -->
             <div class="form-group">
               <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="Description">Description:</label>
@@ -86,6 +95,7 @@
                 <p class="text-justify">Example: <em>"Group of 10 people, shared apikey. We have few games that we want to save data from and easily access later."</em></p>
               </div>
             </div>
+
             <!-- Forth label -->
             <div class="form-group">
               <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="created">Created At:</label>
@@ -93,23 +103,24 @@
                 <p class="date">Time</p>
               </div>
             </div>
+
             <!-- Submit -->
             <div class="form-group">        
               <div class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12">
                 <input type="submit" class="btn btn-default" value="Create new resource">
               </div>
             </div>
+
             <div>
               <p>Your Generated apikey will appear below!</p>
               <p class="apikey">Not yet implemented, use post request manually</p>
             </div>
-          </form>        
-        </div>
 
-
+          </form>
+        </div>      
       </div>
     </div>
-	</div>	
+  </div>
 
 </body>
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>  
