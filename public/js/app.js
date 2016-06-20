@@ -2,14 +2,17 @@
 var app = angular.module('RestAPI', []);
 
 // CONTROLLERS
-app.controller('RestCtrl', function($scope){
+app.controller('RestCtrl', function($scope, $interval){
+	// Display realtime on form
+	var tick = function() { $scope.realtime = Date.now(); }
+	tick();
+	$interval(tick, 1000);
+
     $scope.validate_createForm = function() {
-        //Already validated.. Password check here?
-        // $scope.createForm.password.$modelValue;
-        var vm_form_obj = {
-            password:   $scope.createForm.password.$modelValue,
-            mname:      $scope.createForm.mname.$modelValue,
-            quantity:   $scope.createForm.quantity.$modelValue,
+        var user_form_obj = {
+			username: 		$scope.createForm.username.$modelValue,
+			teamname:   	$scope.createForm.teamname.$modelValue,
+			description: 	$scope.createForm.description.$modelValue
         };
     }
 });
