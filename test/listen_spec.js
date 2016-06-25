@@ -6,21 +6,23 @@ var server = supertest.agent("http://localhost:8080");
 
 describe("Routing", function() {
 	//Happy path
-	describe("a valid webserver", function() {
+	describe("A Valid API", function() {
+		before(function() {});
 
-		before(function() {
+		it("Port is binded", function(){
 		});
-
-		it("port is binded", function(){
-			//is it
-		});
-		// Index
-		it("returns home page", function(done){
-			//does it
+		it("Returns home page", function(done){
+			server
+			    .get("/")
+			    .expect(200)
+			    .end(function(err,res){
+			    	res.status.should.equal(200);
+			      	done();
+		    	});
 			done();
  		});
 		// 404
- 		it("should return 404", function(done){
+ 		it("Returns 404", function(done){
 		    server
 			    .get("/random")
 			    .expect(404)
@@ -29,10 +31,9 @@ describe("Routing", function() {
 			      	done();
 		    	});
 	  	});
- 		// Get
-		it('responds with json', function(done) {
+		it('Returns users', function(done) {
 		    server
-		      	.get('/user')
+		      	.get('/users')
 		      	.set('Accept', 'application/json')
 		      	.expect('Content-Type', /json/)
 		    	.expect(200, done);
