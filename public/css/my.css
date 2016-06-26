@@ -1,10 +1,17 @@
 body, html {
-	background-color: #EBEBEC;
+	background-color: #EBEBEC !important;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  
+	height: 100%;
 }
-h4 {
-	padding-top: +20px;
+.row { 
+	margin-top: 20px; 
+	color: #5C4A42;
+	text-shadow: -1px -1px 4px rgba(150, 150, 150, 1);
+	font-size: 16px;
 }
+.row > h3 {	color: black; font-weight: bold;}
+.row > h4 {	color: black; font-weight: bold;}
+.row thead { color: #383334; }
 
 .text-justify {
 	text-align: justify;
@@ -14,37 +21,26 @@ h4 {
 	text-align: center;
 }
 #jumbo {
-
-	margin-bottom: 0px;
 	padding         : 20px;
 	background-color: #383334;
 	width           : 100%;
 	color           : #AB8A71;
 	background-image: url(../img/jumbo_bg.jpg);
-	text-align      : center;
+	margin-bottom   : 0px;
 }
 
-#jumbo h2 {
-	font-weight: 800;
-}
-
-#form-content {	
-
-}
-
-#form-content input, textarea{
-}
+#jumbo h2 {	font-weight: 800; }
 
 #apikey {
-	width: 40%;
-	font-weight: bold;
+	width           : 40%;
+	font-weight     : bold;
 	background-color: #98fb98;
-	padding: 5px;
-	border-radius: 25px;
-	border: 1px solid black;
-	text-align: center;
-	color: #003300;
-	text-shadow: none;
+	padding         : 5px;
+	border-radius   : 25px;
+	border          : 1px solid black;
+	text-align      : center;
+	color           : #003300;
+	text-shadow     : none;
 }
 
 #date {
@@ -52,11 +48,26 @@ h4 {
 	padding-top: 5px;
 }
 
-.navbar-nav {
-	width: 100%;
-	text-align: center;
+#menu {
+	margin-top      : 0px;
+	background-color: #5C4A42;
+	border-radius   : 0px;
+	border          : 0px;
 }
-.navbar-nav li {
-  float: none;
-  display: inline-block;
+
+#navi {
+	float    : none;
+	font-size: 18px;
 }
+
+#navi a { color: #D0CDCA; }
+
+#navi > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	color: white;  /*Sets the text hover color on navbar*/
+}
+
+#navi > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	color: white; 
+	background-color: #AB8A71; /*BACKGROUND color for active*/
+}
+

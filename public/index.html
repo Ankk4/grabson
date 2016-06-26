@@ -7,41 +7,49 @@
 
 	<link href="public/css/my.css" rel="stylesheet">
 	<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
 </head>
 <body ng-controller="RestCtrl">
-
-  <div class="jumbotron" id="jumbo"> <h2>Grabson v0.9 - RESTful Application for Game Data</h2> </div>
+  <div class="jumbotron" id="jumbo"> <h2 class="col-md-5 center-block" style="float:none">RESTful Application for Game Data</h2> </div>
+  <div class="navbar navbar-default" id="menu">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav col-md-5 col-sm-12 center-block" id="navi">
+        <li class="active"> <a href="#">Home</a></li>
+        <li> <a href="#">Create New Team</a>    </li>
+        <li> <a href="#">Route Info</a>         </li>
+      </ul>
+    </div>
+  </div>
 
 	<!-- Main Content -->
   <div class="container-fluid page-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <!-- First row -->
-    <div class="row">    
-      <!-- Content - left -->
-      <div class="text-justify col-lg-5 col-md-5 col-md-12 col-xs-12">
+    <div class="row col-md-5 col-sm-12 center-block" style="float:none">
+      <h3>What is this?</h3> 
 
-        <h3>What is this?</h3> 
-        <p>REST is a coding architechtural model and comes from the words "Representational State Transfer". It is completely stateless, meaning server side does not store any state about the client session. The state is instead kept and transfered from the client to everywhere. This is the architechture style of the world wide web!</p>
-        <p> This API currently implements HTTP REST services to collect and serve data about different games. This can be used to store data about game time, player behavior and so on for later analysis and other use. </p>
-          
-        <h4>REST Verbs</h4>
+      <p>REST is a coding architechtural model and comes from the words "Representational State Transfer". It is completely stateless, meaning server side does not store any state about the client session. The state is instead kept and transfered from the client to everywhere. This is the architechture style of the world wide web!</p>
 
-        <div class="text-justify">
-        
-          <table class="table">
-            <thead>
-              <tr> <th>Verbs</th> <th>Objective</th> <th>Implemented</th></tr>
-            </thead>
-            <tbody>
-              <tr> <td>GET</td>     <td>Retrive items from resource</td>        <td>Yes</td>  </tr>
-              <tr> <td>POST</td>    <td>Create new item in resource</td>        <td>Yes</td>  </tr>
-              <tr> <td>PUT</td>     <td>Replace existing item in resource (redundant, use POST/DELETE)</td>  <td>No</td>   </tr>
-              <tr> <td>PATCH</td>   <td>Update existing item in resource</td>   <td>Yes</td>   </tr>
-              <tr> <td>DELETE</td>  <td>Delete existing item in resource</td>   <td>No</td>   </tr>            
-            </tbody>
-          </table>
+      <p> This RESTful API is developed using Nodejs and the MEAN-stack. It implements HTTP services to collect and serve data about different games. This can be used to store data about game time, player behavior and so on for later analysis and other use.</p>
+    </div> 
 
-          <h4>Route information</h4>
+    <!-- Second row -->
+    <div class="row col-md-5 col-sm-12 center-block" style="float:none">
+      <h4>REST Verbs</h4>
+      <table class="table">
+        <thead>
+          <tr> <th>Verbs</th> <th>Objective</th> <th>Implemented</th></tr>
+        </thead>
+        <tbody>
+          <tr> <td>GET</td>     <td>Retrive items from resource</td>        <td>Yes</td>  </tr>
+          <tr> <td>POST</td>    <td>Create new item in resource</td>        <td>Yes</td>  </tr>
+          <tr> <td>PUT</td>     <td>Replace existing item in resource</td>  <td>No</td>   </tr>
+          <tr> <td>PATCH</td>   <td>Update existing item in resource</td>   <td>Yes</td>  </tr>
+          <tr> <td>DELETE</td>  <td>Delete existing item in resource</td>   <td>No</td>   </tr>            
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+          <!--<h4>Route information</h4>
           <table class="table">
             <thead>
               <tr> <th>Routes</th> <th>Functionality</th> <th>Implemented</th></tr>
@@ -57,15 +65,15 @@
           </table>
 
         </div>   
-      </div>
-
-      <!-- Content - Right -->
+      </div>-->
+      <!--
+      <!-- Content - Right 
       <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1" id="content-right">
         <div id="form-content">
           <form class="form-horizontal" role="form" id="newTeam">
             <h3>Create New Team</h3><br>
 
-            <!-- First label -->
+            <!-- First label 
             <div class="form-group">
               <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="username">Username:</label>
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -73,7 +81,7 @@
               </div>
             </div>
 
-            <!-- Second label -->
+            <!-- Second label
             <div class="form-group">
               <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="teamname">Team name:</label>
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -81,7 +89,7 @@
               </div>
             </div>
 
-            <!-- Third label -->
+            <!-- Third label 
             <div class="form-group">
               <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="Description">Description:</label>
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">          
@@ -90,7 +98,7 @@
               </div>
             </div>
 
-            <!-- Forth label -->
+            <!-- Forth label 
             <div class="form-group">
               <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="created">Created At:</label>
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">          
@@ -98,7 +106,7 @@
               </div>
             </div>
 
-            <!-- Submit -->
+            <!-- Submit 
             <div class="form-group col-lg-4 col-md-4 col-sm-4">        
               <div class="control-label col-lg-12 col-md-12 col-sm-2 col-xs-12">
                 <input type="submit" class="btn btn-default" value="Create new resource" style="padding:10px;">
@@ -110,11 +118,8 @@
             </div>
           </form>
         </div>   
-
       </div>
-
-    </div>
-  </div>
+  </div>-->
 
 </body>
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>  
