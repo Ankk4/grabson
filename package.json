@@ -9,6 +9,7 @@
     "grunt-contrib-jshint": "*",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-htmlhint": "^0.9.13",
+    "grunt-jscs": "^3.0.1",
     "grunt-nodemon": "^0.4.2",
     "jshint-stylish": "^2.2.0",
     "mocha": "^2.5.3",
@@ -21,8 +22,6 @@
     "bootstrap": "^3.3.6",
     "express": "^4.13.4",
     "jquery": "<3.0.0",
-    "express": "^4.13.4",
-    "body-parser": "*",
     "mongoose": "^4.4.19"
   }
 }

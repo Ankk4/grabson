@@ -2,15 +2,8 @@
 module.exports = function(grunt){
     grunt.initConfig({
         jshint: {
-            options: {
-                reporter: require('jshint-stylish')
-            },
+            options: { reporter: require('jshint-stylish') },
             files: ['lib/**/*.js','models/**/*.js']
-        },
-        nodemon: {
-          dev: {
-            script: 'lib/server.js'
-          }
         },
         htmlhint: {
             templates: {
@@ -22,14 +15,12 @@ module.exports = function(grunt){
                 },
                 src: ['public/*.html', 'public/**/*.html']
             }
-
         },
         watch: {
-            files: ['lib/**/*.js','models/**/*.js',
-                    'public/*.html', 'public/**/*.html'
-            ],
-            tasks: ['jshint', 'htmlhint']
+            files: ['lib/**/*.js','models/**/*.js', 'public/*.html', 'public/**/*.html'],
+            tasks: ['jshint', 'jscs', 'htmlhint']
         },
+        nodemon: { dev: { script: 'lib/server.js' } },
         concurrent: {
             dev: [
                 'jshint',
@@ -39,7 +30,7 @@ module.exports = function(grunt){
             ],
             options: {
                 logConcurrentOutput: true,
-                limit: 4
+                limit: 5
             }
         }
     });
