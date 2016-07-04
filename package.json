@@ -1,7 +1,8 @@
 {
   "name": "grabson",
   "scripts": {
-    "start": "node lib/server.js"
+    "start": "node lib/server.js",
+    "tstart": "tmux node lib/server.js"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
