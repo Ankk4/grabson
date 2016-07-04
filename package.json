@@ -1,5 +1,8 @@
 {
   "name": "grabson",
+  "scripts": {
+    "start": "node lib/server.js"
+  },
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-clear": "^0.2.1",
