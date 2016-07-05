@@ -14,11 +14,11 @@ module.exports = function(grunt){
                     'id-unique' : true
                 },
                 src: ['public/*.html', 'public/**/*.html']
-            }
+            }   
         },
         watch: {
             files: ['lib/**/*.js','models/**/*.js', 'public/*.html', 'public/**/*.html'],
-            tasks: ['jshint', 'jscs', 'htmlhint']
+            tasks: ['jshint', 'htmlhint']
         },
         nodemon: { dev: { script: 'lib/server.js' } },
         concurrent: {
