@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="center-block keskita-perkele">
+      <form class="form-horizontal" role="form" id="newTeam">
+
+    <h3>Create New Team</h3><br>
+
+    <!-- First label -->
+    <div class="form-group">
+      <label class="control-label" for="username">Username:</label>
+      <input type="text" class="form-control col-lg-6" id="username" placeholder="Must be unique">
+    </div>
+
+    <!-- Second label -->
+    <div class="form-group">
+      <label class="control-label" for="teamname">Team name:</label>
+      <input type="text" class="form-control" id="teamname" placeholder="Name of your team (can be empty)">
+    </div>
+
+    <!-- Third label -->
+    <div class="form-group">
+      <label class="control-label" for="Description">Description:</label>
+      <div>          
+        <textarea class="form-control" id="description" placeholder="Description of your REST needs!"></textarea>
+        <p class="text-justify">Example: <em>"Group of 10 people, shared apikey. We have few games that we want to save data from and easily access later."</em></p>
+      </div>
+    </div>
+
+    <!-- Forth label -->
+    <div class="form-group">
+      <label class="control-label for="created">Created At:</label>
+      <div>          
+        <p id="date">{{ realtime | date:'medium'}}</p>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <div class="form-group">        
+      <div class="control-label">
+        <input type="submit" class="btn btn-default" value="Create new resource" style="padding:10px;">
+      </div>
+    </div>
+
+    <div>
+      <h5 id="apikey">APIKEY: Not yet implemented, use post request manually</h5>
+    </div>
+  </form>
+
+    </div>
+</div>

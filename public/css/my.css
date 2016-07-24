@@ -1,3 +1,8 @@
+/* 	Copyright © Antero Juutinen
+	Feel free to use and modify this to your own uses, but do not hold me liable. -->
+	WTFNMFPL-1.0
+*/
+
 body, html {
 	background-color: #EBEBEC !important;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  
@@ -6,7 +11,7 @@ body, html {
 .row { 
 	margin-top: 20px; 
 	color: #5C4A42;
-	text-shadow: -1px -1px 1px rgba(150, 150, 150, 1);
+	text-shadow: -1px -1px 4px rgba(150, 150, 150, 1);
 	font-size: 16px;
 }
 .row > h3 {	color: black; font-weight: bold;}
@@ -29,7 +34,11 @@ body, html {
 	margin-bottom   : 0px;
 }
 
-#jumbo h2 {	font-weight: 800; }
+#jumbo h2 {	
+	font-weight: 800; 
+	float: none;
+	padding-left: 0px;
+}
 
 #apikey {
 	width           : 40%;
@@ -48,26 +57,30 @@ body, html {
 	padding-top: 5px;
 }
 
-#menu {
+#navigation {
 	margin-top      : 0px;
 	background-color: #5C4A42;
 	border-radius   : 0px;
 	border          : 0px;
 }
 
-#navi {
+#navElements {
 	float    : none;
 	font-size: 18px;
 }
 
-#navi a { color: #D0CDCA; }
+#navElements a { color: #D0CDCA; }
 
-#navi > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+#navElements > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
 	color: white;  /*Sets the text hover color on navbar*/
 }
 
-#navi > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+#navElements > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	color: white; 
 	background-color: #AB8A71; /*BACKGROUND color for active*/
 }
 
+.keskita-perkele {
+	padding-left: 15% !important;
+	padding-right: 15% !important;
+}

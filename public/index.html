@@ -1,129 +1,49 @@
+<!-- Copyright © Antero Juutinen  -->
+<!-- Feel free to use and modify this to your own uses, but do not hold me liable. -->
+<!-- WTFNMFPL-1.0 -->
+
 <!DOCTYPE html>
 <html ng-app="RestAPI">
 <head>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>REST API</title>
 
 	<link href="public/css/my.css" rel="stylesheet">
 	<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
+
 <body ng-controller="RestCtrl">
-  <div class="jumbotron" id="jumbo"> <h2 class="col-md-5 center-block" style="float:none">RESTful Application for Game Data</h2> </div>
-  <div class="navbar navbar-default" id="menu">
-    <div class="container-fluid">
-      <ul class="nav navbar-nav col-md-5 col-sm-12 center-block" id="navi">
-        <li class="active"> <a href="#">Home</a></li>
-        <li> <a href="#">Create New Team</a>    </li>
-        <li> <a href="#">Route Info</a>         </li>
-      </ul>
-    </div>
+
+  <!-- Jumbotron -->
+  <div class="jumbotron" id="jumbo">
+    <h2 class="col-md-5 center-block">RESTful Application for Game Data</h2> 
   </div>
+  
+  <!-- Navigation -->
+  <div class="navbar navbar-default center-block" id="navigation">
+    <div class="container-fluid center-block">
+
+      <ul class="nav navbar-nav col-md-5 col-sm-12 center-block" id="navElements">
+        <li class="active"> <a href="#/">Home              </a> </li>
+        <li>                <a href="#/newteam">Create New Team </a> </li>
+        <li>                <a href="#/routeinfo">Route Info       </a> </li>
+      </ul>
+
+    </div>
+  </div> <!-- Navigation end -->
 
 	<!-- Main Content -->
-  <div class="container-fluid page-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <!-- First row -->
-    <div class="row col-md-5 col-sm-12 center-block" style="float:none">
-      <h3>What is this?</h3> 
-
-      <p>REST is a coding architechtural model and comes from the words "Representational State Transfer". It is completely stateless, meaning server side does not store any state about the client session. The state is instead kept and transfered from the client to everywhere. This is the architechture style of the world wide web!</p>
-
-      <p> This RESTful API is developed using Nodejs and the MEAN-stack. It implements HTTP services to collect and serve data about different games. This can be used to store data about game time, player behavior and so on for later analysis and other use.</p>
-    </div> 
-
-    <!-- Second row -->
-    <div class="row col-md-5 col-sm-12 center-block" style="float:none">
-      <h4>REST Verbs</h4>
-      <table class="table">
-        <thead>
-          <tr> <th>Verbs</th> <th>Objective</th> <th>Implemented</th></tr>
-        </thead>
-        <tbody>
-          <tr> <td>GET</td>     <td>Retrive items from resource</td>        <td>Yes</td>  </tr>
-          <tr> <td>POST</td>    <td>Create new item in resource</td>        <td>Yes</td>  </tr>
-          <tr> <td>PUT</td>     <td>Replace existing item in resource</td>  <td>No</td>   </tr>
-          <tr> <td>PATCH</td>   <td>Update existing item in resource</td>   <td>Yes</td>  </tr>
-          <tr> <td>DELETE</td>  <td>Delete existing item in resource</td>   <td>No</td>   </tr>            
-        </tbody>
-      </table>
-    </div>
+  <div class="container">
+    <div ng-view></div>
   </div>
-
-          <!--<h4>Route information</h4>
-          <table class="table">
-            <thead>
-              <tr> <th>Routes</th> <th>Functionality</th> <th>Implemented</th></tr>
-            </thead>
-            <tbody>
-              <tr> <td>/</td>                 <td>GET this page</td>                                <td>Yes</td>  </tr>
-              <tr> <td>/users</td>            <td>GET all the users, POST new user</td>             <td>Yes</td>  </tr>        
-              <tr> <td>/users/:apiKey</td>    <td>GET user by apiKey, PATCH and PUT by apiKey</td>  <td>Yes</td>  </tr>
-              <tr> <td>/games</td>            <td>GET all data about all games</td>                 <td>Yes</td>  </tr>
-              <tr> <td>/games/single/:id</td> <td>GET single game data insert by id</td>            <td>Yes</td>  </tr>
-              <tr> <td>/games/:apiKey</td>    <td>GET all games by apiKey, POST new game data</td>  <td>Yes</td>  </tr>
-            </tbody>
-          </table>
-
-        </div>   
-      </div>-->
-      <!--
-      <!-- Content - Right 
-      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1" id="content-right">
-        <div id="form-content">
-          <form class="form-horizontal" role="form" id="newTeam">
-            <h3>Create New Team</h3><br>
-
-            <!-- First label 
-            <div class="form-group">
-              <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="username">Username:</label>
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <input type="text" class="form-control" id="username" placeholder="Must be unique">
-              </div>
-            </div>
-
-            <!-- Second label
-            <div class="form-group">
-              <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="teamname">Team name:</label>
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <input type="text" class="form-control" id="teamname" placeholder="Name of your team (can be empty)">
-              </div>
-            </div>
-
-            <!-- Third label 
-            <div class="form-group">
-              <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="Description">Description:</label>
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">          
-                <textarea class="form-control" id="description" placeholder="Description of your REST needs!"></textarea>
-                <p class="text-justify">Example: <em>"Group of 10 people, shared apikey. We have few games that we want to save data from and easily access later."</em></p>
-              </div>
-            </div>
-
-            <!-- Forth label 
-            <div class="form-group">
-              <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="created">Created At:</label>
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">          
-                <p id="date">{{ realtime | date:'medium'}}</p>
-              </div>
-            </div>
-
-            <!-- Submit 
-            <div class="form-group col-lg-4 col-md-4 col-sm-4">        
-              <div class="control-label col-lg-12 col-md-12 col-sm-2 col-xs-12">
-                <input type="submit" class="btn btn-default" value="Create new resource" style="padding:10px;">
-              </div>
-            </div>
-
-            <div>
-              <h5 class="col-lg-12 col-md-12 col-sm-12" id="apikey">APIKEY: Not yet implemented, use post request manually</h5>
-            </div>
-          </form>
-        </div>   
-      </div>
-  </div>-->
 
 </body>
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>  
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="node_modules/angular/angular.min.js"></script>
+  <script src="node_modules/angular-route/angular-route.min.js"></script>
 	<script src="public/js/app.js"></script>
 </html>
