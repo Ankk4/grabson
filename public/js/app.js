@@ -22,7 +22,19 @@ RestAPI.config(function($routeProvider) {
 });
 
 // Overlord
-RestAPI.controller('RestCtrl', ['$scope', '$log', function($scope, $log) {
+RestAPI.controller('RestCtrl', ['$scope', '$log', '$location', function($scope, $log, $location) {
+	$scope.items = [
+  		{ path: '/', 			title: 'Home'				},
+      	{ path: '/newteam', 	title: 'Create new team'	},
+      	{ path: '/routeinfo', 	title: 'Route info'			}
+    ];
+
+    $scope.isActive = function(item) {
+  		if (item.path == $location.path()) {
+    		return true;
+      	}
+      	return false;
+    };
 
 }]);
 
@@ -32,11 +44,7 @@ RestAPI.controller('HomeCtrl', ['$scope', '$log', function($scope, $log) {
 }]);
 
 // Create new team
-RestAPI.controller('NewTeamCtrl', ['$scope', '$log', '$interval', function($scope, $log, $interval) {
-	// Display realtime on form
-	var tick = function() { $scope.realtime = Date.now(); }
-	tick();
-	$interval(tick, 1000);
+RestAPI.controller('NewTeamCtrl', ['$scope', '$log', function($scope, $log) {
 
     $scope.validate_createForm = function() {
         var user_form_obj = {

@@ -1,8 +1,9 @@
+<!DOCTYPE html>
+
 <!-- Copyright © Antero Juutinen  -->
 <!-- Feel free to use and modify this to your own uses, but do not hold me liable. -->
 <!-- WTFNMFPL-1.0 -->
 
-<!DOCTYPE html>
 <html ng-app="RestAPI">
 <head>
 
@@ -10,8 +11,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>REST API</title>
 
-	<link href="public/css/my.css" rel="stylesheet">
 	<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="public/css/my.css" rel="stylesheet">
 
 </head>
 
@@ -19,25 +20,33 @@
 
   <!-- Jumbotron -->
   <div class="jumbotron" id="jumbo">
-    <h2 class="col-md-5 center-block">RESTful Application for Game Data</h2> 
+    <div class="container">
+      <div class="row">
+
+        <h2 class="center-block keskita-perkele">RESTful Application for Game Data</h2> 
+        <p class="center-block keskita-perkele">Copyright © Antero Juutinen | WTFNMFPL-1.0</p>
+
+      </div>
+    </div>    
   </div>
   
   <!-- Navigation -->
-  <div class="navbar navbar-default center-block" id="navigation">
-    <div class="container-fluid center-block">
+  <div class="navbar navbar-default" id="navigation">
+    <div class="container">
+      <div>
 
-      <ul class="nav navbar-nav col-md-5 col-sm-12 center-block" id="navElements">
-        <li class="active"> <a href="#/">Home              </a> </li>
-        <li>                <a href="#/newteam">Create New Team </a> </li>
-        <li>                <a href="#/routeinfo">Route Info       </a> </li>
-      </ul>
+        <ul class="nav navbar-nav keskita-perkele" id="navElements">
+          <li ng-repeat="item in items" ng-class="{active: isActive(item)}"><a href="#{{item.path}}">{{item.title}}</a></li>
+          <li><a href="https://github.com/Ankk4/grabson">Source code (github)</a></li>
+        </ul>        
 
+      </div>
     </div>
   </div> <!-- Navigation end -->
 
 	<!-- Main Content -->
   <div class="container">
-    <div ng-view></div>
+    <div ng-view=""></div>
   </div>
 
 </body>

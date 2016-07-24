@@ -1,49 +1,45 @@
-<div class="row">
-    <div class="center-block keskita-perkele">
-      <form class="form-horizontal" role="form" id="newTeam">
+<div class="row custom-content">
+  <div class="center-block keskita-perkele">
+    <form class="form-horizontal" role="form" id="newTeam">
 
-    <h3>Create New Team</h3><br>
-
-    <!-- First label -->
-    <div class="form-group">
-      <label class="control-label" for="username">Username:</label>
-      <input type="text" class="form-control col-lg-6" id="username" placeholder="Must be unique">
-    </div>
-
-    <!-- Second label -->
-    <div class="form-group">
-      <label class="control-label" for="teamname">Team name:</label>
-      <input type="text" class="form-control" id="teamname" placeholder="Name of your team (can be empty)">
-    </div>
-
-    <!-- Third label -->
-    <div class="form-group">
-      <label class="control-label" for="Description">Description:</label>
-      <div>          
-        <textarea class="form-control" id="description" placeholder="Description of your REST needs!"></textarea>
-        <p class="text-justify">Example: <em>"Group of 10 people, shared apikey. We have few games that we want to save data from and easily access later."</em></p>
+      <h3>Create New Team</h3>
+      
+      <!-- First label -->
+      <div class="form-group">
+        <label class="control-label col-lg-2" for="username">Username:</label>
+        <div class="col-lg-6">
+          <input type="text" class="form-control" id="username" placeholder="Must be unique">
+        </div>
       </div>
-    </div>
 
-    <!-- Forth label -->
-    <div class="form-group">
-      <label class="control-label for="created">Created At:</label>
-      <div>          
-        <p id="date">{{ realtime | date:'medium'}}</p>
+      <!-- Second label -->
+      <div class="form-group">
+        <label class="control-label col-lg-2" for="teamname">Team name:</label>
+        <div class="col-lg-6">
+          <input type="text" class="form-control" id="teamname" placeholder="Name of your team (can be empty)">
+        </div>      
       </div>
-    </div>
 
-    <!-- Submit -->
-    <div class="form-group">        
-      <div class="control-label">
-        <input type="submit" class="btn btn-default" value="Create new resource" style="padding:10px;">
+      <!-- Third label -->
+      <div class="form-group">
+        <label class="control-label col-lg-2" for="Description">Description:</label>
+        <div class="col-lg-6">          
+          <textarea class="form-control " id="description" placeholder="Description of your REST needs!"></textarea>
+        </div>
       </div>
-    </div>
 
-    <div>
-      <h5 id="apikey">APIKEY: Not yet implemented, use post request manually</h5>
-    </div>
-  </form>
+      <!-- Submit -->
+      <div class="form-group">
+        <div class="control-label col-lg-2">
+          <input type="submit" class="btn btn-default custom-btn" value="Generate">
+        </div>
+      </div>
 
-    </div>
+      <!-- ApiKey -->
+      <div>
+        <h5 id="apikey">Your key will appear here.</h5>
+      </div>
+
+    </form>
+  </div>
 </div>

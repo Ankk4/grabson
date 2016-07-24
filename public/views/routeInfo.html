@@ -1,14 +1,71 @@
-          <!--<h4>Route information</h4>
-          <table class="table">
-            <thead>
-              <tr> <th>Routes</th> <th>Functionality</th> <th>Implemented</th></tr>
-            </thead>
-            <tbody>
-              <tr> <td>/</td>                 <td>GET this page</td>                                <td>Yes</td>  </tr>
-              <tr> <td>/users</td>            <td>GET all the users, POST new user</td>             <td>Yes</td>  </tr>        
-              <tr> <td>/users/:apiKey</td>    <td>GET user by apiKey, PATCH and PUT by apiKey</td>  <td>Yes</td>  </tr>
-              <tr> <td>/games</td>            <td>GET all data about all games</td>                 <td>Yes</td>  </tr>
-              <tr> <td>/games/single/:id</td> <td>GET single game data insert by id</td>            <td>Yes</td>  </tr>
-              <tr> <td>/games/:apiKey</td>    <td>GET all games by apiKey, POST new game data</td>  <td>Yes</td>  </tr>
-            </tbody>
-          </table>
+<div class="row custom-content">
+  <div class="center-block keskita-perkele">
+    <h3>General info</h3>
+    <p>This application is meant to be used in "machine-to-machine" way. Meaning, while you can manually search and insert data, to really benefit from it, you have to code dynamic HTTP REST requests into your game.</p>
+
+    <p>Below you can see all the routes that this API implements. You can click the route links to see how everything works and is formatted, just remember to replace the apikey with your own. Each object that gets queried from the server is appended with links to relating data. This is called HATEOS and it is a self documenting system.</p>
+
+    <p>For example, to <strong>POST</strong> game data, you would use the following URL: <strong>/games/yourapikey</strong> and thus the data you sent gets saved under your unique key. Then to get it, you would create <strong>GET</strong> request to the following URL: <strong>/games/yourapikey</strong></p><br>
+    
+    <h4>Data</h4>
+    <p>All HTTP requests contain a header and a body. Header is where you will define what sort of data you will be sending, and the body is where you put your actual data in the format defined by the header. To make sure everything goes fluently, you should define your HTTP request header with <strong>"Content-Type"</strong>  equal to <strong>"application/json"</strong></p> 
+    <p>The body should then contain valid JSON-data. Game-data JSON-object should always have the following structure: <br><br>
+
+    <strong>{ "game": "NameOfMyGame", "data": { "some": "data" } }</strong>
+
+    <br><br>
+
+    The "data" object can contain whatever valid JSON key-value pairs you want. It can probably support hundreds of paris just fine, but dont go crazy with the size of single inserts.
+  
+    </p>
+    <br>
+    <h3>Route information</h3>
+    
+    <table class="table">
+
+      <thead>
+        <tr> <th>Routes</th> <th>Functionality</th> <th>Implemented</th></tr>
+      </thead>
+
+      <tbody>
+
+        <tr> 
+          <td><a href="#/">/</a></td>
+          <td>GET home page</td>
+          <td>Yes</td>  
+        </tr>
+
+        <tr> 
+          <td><a href="/users">/users</a></td>
+          <td>GET all the users, POST new user</td>
+          <td>Yes</td>  
+        </tr>    
+
+        <tr> 
+          <td><a href="/users/yourapikey">/users/:apiKey</a></td>
+          <td>GET user by apiKey, PATCH and PUT by apiKey</td>
+          <td>Yes</td>  </tr>
+
+        <tr> 
+          <td><a href="/games">/games</a></td>
+          <td>GET all data about all games</td>
+          <td>Yes</td>
+        </tr>
+
+        <tr>
+          <td><a href="/games/single/objectId">/games/single/:id</a></td>
+          <td>GET single game data by id</td>
+          <td>Yes</td>
+        </tr>
+
+        <tr>
+          <td><a href="/games/yourapikey">/games/:apiKey</a></td>
+          <td>GET all games by apiKey, POST new game data</td>
+          <td>Yes</td>
+        </tr>
+
+      </tbody>
+    </table>   
+  </div> 
+</div>
+<br>

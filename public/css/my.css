@@ -6,25 +6,9 @@
 body, html {
 	background-color: #EBEBEC !important;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  
-	height: 100%;
-}
-.row { 
-	margin-top: 20px; 
-	color: #5C4A42;
-	text-shadow: -1px -1px 4px rgba(150, 150, 150, 1);
-	font-size: 16px;
-}
-.row > h3 {	color: black; font-weight: bold;}
-.row > h4 {	color: black; font-weight: bold;}
-.row thead { color: #383334; }
-
-.text-justify {
-	text-align: justify;
+	height: 101%;
 }
 
-.text-center {
-	text-align: center;
-}
 #jumbo {
 	padding         : 20px;
 	background-color: #383334;
@@ -52,11 +36,6 @@ body, html {
 	text-shadow     : none;
 }
 
-#date {
-	font-weight: normal;
-	padding-top: 5px;
-}
-
 #navigation {
 	margin-top      : 0px;
 	background-color: #5C4A42;
@@ -80,7 +59,35 @@ body, html {
 	background-color: #AB8A71; /*BACKGROUND color for active*/
 }
 
+.custom-content { 
+	color      : #4a3c36;
+	text-shadow: -1px -1px 4px rgba(150, 150, 150, 1);
+	font-size  : 16px;
+}
+
+.custom-content h3, h4 { 
+	color: black; font-weight: bold;
+}
+
+.custom-content thead { 
+	color: #383334; 	
+}
+
 .keskita-perkele {
-	padding-left: 15% !important;
+	padding-left : 10% !important;
 	padding-right: 15% !important;
+	text-align: justify-all;
+	margin-left: 5%;
+}
+
+.form-horizontal .control-label {
+	text-align: left !important;
+}
+
+.form-group {
+	padding-top: 10px !important;
+}
+
+.custom-btn {
+	font-size: 16px;
 }
