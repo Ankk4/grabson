@@ -7,7 +7,7 @@ var gameModel = new Schema({
 	data: 		{ type: Object },
 	apikey: 	{ type: String, required: true}
 },{
-	timestamps: 	true
+	timestamps: true
 });
 
 module.exports = mongoose.model('Game', gameModel);
