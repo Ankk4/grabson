@@ -44,15 +44,30 @@ RestAPI.controller('HomeCtrl', ['$scope', '$log', function($scope, $log) {
 }]);
 
 // Create new team
-RestAPI.controller('NewTeamCtrl', ['$scope', '$log', function($scope, $log) {
-
-    $scope.validate_createForm = function() {
-        var user_form_obj = {
-			username: 		$scope.createForm.username.$modelValue,
-			teamname:   	$scope.createForm.teamname.$modelValue,
-			description: 	$scope.createForm.description.$modelValue
+RestAPI.controller('NewTeamCtrl', ['$scope', '$log', '$http', function($scope, $log, $http) {
+	$scope.success = false;
+    $scope.submit = function() {
+        var user_obj = {
+			username: 		$scope.username,
+			teamname:   	$scope.teamname,
+			description: 	$scope.description
         };
-    }
+
+        var data = JSON.stringify(user_obj);
+
+        $http({
+	  		method: 'POST',
+		  	url: '/users',
+		  	headers: {'Content-Type': 'application/JSON'},
+		  	data: JSON.stringify(user_obj)
+		}).then(function successCallback(response) {
+	    	$scope.apikey = response.data.apikey;
+	    	$scope.success = true;
+
+	  	}, function errorCallback(response) {	
+	    	alert('Oh ou something went terribly wrong!\n\nERROR MESSAGE: ' + response.data.errmsg);
+	  	});
+    };
 }]);
 
 // Route info

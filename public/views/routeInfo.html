@@ -9,13 +9,13 @@
     
     <h4>Data</h4>
     <p>All HTTP requests contain a header and a body. Header is where you will define what sort of data you will be sending, and the body is where you put your actual data in the format defined by the header. To make sure everything goes fluently, you should define your HTTP request header with <strong>"Content-Type"</strong>  equal to <strong>"application/json"</strong></p> 
-    <p>The body should then contain valid JSON-data. Game-data JSON-object should always have the following structure: <br><br>
+    <p>The body should then contain valid JSON-data. When posting game data, the JSON-object should always have the following structure: <br><br>
 
     <strong>{ "game": "NameOfMyGame", "data": { "some": "data" } }</strong>
 
     <br><br>
 
-    The "data" object can contain whatever valid JSON key-value pairs you want. It can probably support hundreds of paris just fine, but dont go crazy with the size of single inserts.
+    The "data" object can contain whatever valid JSON key-value pairs you want. It can probably support hundreds of pairs just fine, but dont go crazy with the size of single inserts.
   
     </p>
     <br>
@@ -42,8 +42,8 @@
         </tr>    
 
         <tr> 
-          <td><a href="/users/yourapikey">/users/:apiKey</a></td>
-          <td>GET user by apiKey, PATCH and PUT by apiKey</td>
+          <td><a href="/users/yourapikey">/users/:apikey</a></td>
+          <td>GET user by apikey, PATCH and PUT by apikey</td>
           <td>Yes</td>  </tr>
 
         <tr> 
@@ -59,8 +59,8 @@
         </tr>
 
         <tr>
-          <td><a href="/games/yourapikey">/games/:apiKey</a></td>
-          <td>GET all games by apiKey, POST new game data</td>
+          <td><a href="/games/yourapikey">/games/:apikey</a></td>
+          <td>GET all games by apikey, POST new game data</td>
           <td>Yes</td>
         </tr>
 

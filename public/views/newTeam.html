@@ -1,6 +1,6 @@
 <div class="row custom-content">
   <div class="center-block keskita-perkele">
-    <form class="form-horizontal" role="form" id="newTeam">
+    <form class="form-horizontal" role="form" id="teamForm" name="teamForm" ng-submit="submit()">
 
       <h3>Create New Team</h3>
       
@@ -8,7 +8,7 @@
       <div class="form-group">
         <label class="control-label col-lg-2" for="username">Username:</label>
         <div class="col-lg-6">
-          <input type="text" class="form-control" id="username" placeholder="Must be unique">
+          <input type="text" class="form-control" id="username" ng-model="username" placeholder="Must be unique" required="">
         </div>
       </div>
 
@@ -16,15 +16,15 @@
       <div class="form-group">
         <label class="control-label col-lg-2" for="teamname">Team name:</label>
         <div class="col-lg-6">
-          <input type="text" class="form-control" id="teamname" placeholder="Name of your team (can be empty)">
+          <input type="text" class="form-control" id="teamname" ng-model="teamname" placeholder="Name of your team">
         </div>      
       </div>
 
       <!-- Third label -->
       <div class="form-group">
-        <label class="control-label col-lg-2" for="Description">Description:</label>
+        <label class="control-label col-lg-2" for="description">Description:</label>
         <div class="col-lg-6">          
-          <textarea class="form-control " id="description" placeholder="Description of your REST needs!"></textarea>
+          <textarea class="form-control" id="description" ng-model="description" placeholder="Description of your REST needs!" required=""></textarea>
         </div>
       </div>
 
@@ -35,9 +35,10 @@
         </div>
       </div>
 
-      <!-- ApiKey -->
+      <!-- apikey -->
       <div>
-        <h5 id="apikey">Your key will appear here.</h5>
+        <label style="margin-top: 10px" type="text">Your apikey will appear below.</label>
+        <h5 id="apikey" ng-model="apikey" ng-show="success">{{ apikey }}</h5>
       </div>
 
     </form>

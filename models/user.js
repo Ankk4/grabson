@@ -14,7 +14,7 @@ var userModel = new Schema({
 	username:		{ type: String, unique: true, required: true},
 	teamname:   	{ type: String },
 	description: 	{ type: String },		
-	apiKey:         { type: String, unique: true, required: true}
+	apikey:         { type: String, unique: true, required: true}
 },{
 	timestamps: 	true
 });

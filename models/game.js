@@ -5,7 +5,7 @@ var Schema   = mongoose.Schema;
 var gameModel = new Schema({
 	game: 		{ type: String, required: true},
 	data: 		{ type: Object },
-	apiKey: 	{ type: String, required: true}
+	apikey: 	{ type: String, required: true}
 },{
 	timestamps: 	true
 });
