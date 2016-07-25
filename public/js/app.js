@@ -51,7 +51,6 @@ RestAPI.controller('NewTeamCtrl', ['$scope', '$log', '$http', function($scope, $
 			username: 		$scope.username,
 			teamname:   	$scope.teamname,
 			description: 	$scope.description,
-			games: []
         };
 
         var data = JSON.stringify(user_obj);
@@ -61,12 +60,21 @@ RestAPI.controller('NewTeamCtrl', ['$scope', '$log', '$http', function($scope, $
 		  	url: '/users',
 		  	headers: {'Content-Type': 'application/JSON'},
 		  	data: JSON.stringify(user_obj)
+
 		}).then(function successCallback(response) {
 	    	$scope.apikey = response.data.apikey;
 	    	$scope.success = true;
+	    	$scope.error = false;
 
 	  	}, function errorCallback(response) {	
-	    	alert('Oh ou something went terribly wrong!\n\nERROR MESSAGE: ' + response.data.errmsg);
+	  		if(response.data.code == 11000) {
+	  			$scope.errorMsg = "Duplicate username, please refresh the page and choose another one.";
+	  			$scope.error = true;
+	  			$scope.success = false;
+	  			console.log(JSON.stringify(response.data));
+	  		}
+	  		else
+	    		alert('oops something went terribly wrong!\n\nERROR MESSAGE: ' + JSON.stringify(response.data));
 	  	});
     };
 }]);
