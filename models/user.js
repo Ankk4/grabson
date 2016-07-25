@@ -1,6 +1,6 @@
 var mongoose  = require('mongoose');
+var rnd  = require("../lib/randomString.js");
 var Schema    = mongoose.Schema;
-
 
 // Problem - Random chance to fail with unique apikey
 // Solution - pre save function that checks and generates new one if nessesery
@@ -15,5 +15,7 @@ var userModel = new Schema({
 },{
 	timestamps: 	true
 });
+
+
 
 module.exports = mongoose.model('User', userModel);
