@@ -50,7 +50,8 @@ RestAPI.controller('NewTeamCtrl', ['$scope', '$log', '$http', function($scope, $
         var user_obj = {
 			username: 		$scope.username,
 			teamname:   	$scope.teamname,
-			description: 	$scope.description
+			description: 	$scope.description,
+			games: []
         };
 
         var data = JSON.stringify(user_obj);
